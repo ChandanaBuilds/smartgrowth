@@ -46,13 +46,11 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-primary text-primary-foreground flex items-center justify-center font-bold">
-                SG
-              </div>
+
               <span className="font-bold text-foreground">Smart Growth</span>
             </div>
             <p className="text-foreground/70 text-sm">
-              Transforming schools and educational institutes through expert digital marketing
+              Transforming Business through expert digital marketing
               solutions.
             </p>
           </motion.div>
