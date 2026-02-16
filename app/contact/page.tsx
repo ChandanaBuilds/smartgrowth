@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 import AnimatedSection from '@/components/AnimatedSection';
-import { Phone, Mail, MapPin, Clock, MessageCircle, Facebook, Linkedin } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, MessageCircle, Facebook, Linkedin, Youtube, Instagram } from 'lucide-react';
 import Link from 'next/link';
 
 export default function ContactPage() {
@@ -13,36 +13,35 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: 'Phone',
-      info: '+1 (555) 123-4567',
+      info: '+91 7981237933',
       description: 'Mon-Fri, 9 AM - 6 PM EST',
-      link: 'tel:+15551234567',
+      link: 'tel:+917981237933',
     },
     {
       icon: Mail,
       title: 'Email',
-      info: 'info@smartgrowth.io',
+      info: 'smartgrowth402@gmail.com',
       description: 'We reply within 2 hours',
-      link: 'mailto:info@smartgrowth.io',
+      link: 'mailto:smartgrowth402@gmail.com',
     },
     {
       icon: MessageCircle,
       title: 'WhatsApp',
-      info: '+1 (555) 987-6543',
+      info: '+91 7981237933',
       description: 'Quick messaging support',
-      link: 'https://wa.me/15559876543',
+      link: 'https://wa.me/917981237933',
     },
     {
       icon: MapPin,
       title: 'Office',
-      info: '123 Marketing St',
-      description: 'Tech City, TC 12345',
+      info: 'Lb Nagar, Hyderabad',
       link: '#',
     },
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+    { icon: Youtube, href: 'https://youtube.com/@smartgrowth-x1s?si=X3zD2PO9vVox2UTK', label: 'YouTube' },
+    { icon: Instagram, href: 'https://www.instagram.com/smartgrowth.digitalmarketing?igsh=MXBoc3M4a2UxbDQwbQ==', label: 'Instagram' },
   ];
 
   return (
@@ -51,7 +50,7 @@ export default function ContactPage() {
 
       <main className="overflow-hidden">
         {/* Hero Section */}
-        <section className="min-h-[60vh] pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background to-secondary/10">
+        <section className="min-h-[40vh] pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background to-secondary/10">
           <div className="max-w-6xl mx-auto">
             <AnimatedSection className="text-center">
               <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 text-balance">
@@ -65,7 +64,7 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Methods Grid */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8">
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <motion.div
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
@@ -124,8 +123,8 @@ export default function ContactPage() {
               <h2 className="text-3xl font-bold text-foreground mb-8">Business Hours</h2>
               <div className="space-y-6">
                 {[
-                  { day: 'Monday - Friday', time: '9:00 AM - 6:00 PM EST' },
-                  { day: 'Saturday', time: '10:00 AM - 4:00 PM EST' },
+                  { day: 'Monday - Friday', time: '9:00 AM - 6:00 PM ' },
+                  { day: 'Saturday', time: '10:00 AM - 4:00 PM ' },
                   { day: 'Sunday', time: 'Closed' },
                 ].map((schedule, idx) => (
                   <motion.div
@@ -235,29 +234,7 @@ export default function ContactPage() {
         </section>
 
         {/* Map Section (Placeholder) */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-card border-t border-border">
-          <div className="max-w-6xl mx-auto">
-            <AnimatedSection className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-3">Our Location</h2>
-              <p className="text-foreground/70">Visit us at our office in Tech City</p>
-            </AnimatedSection>
 
-            <motion.div
-              className="w-full h-96 rounded-xl overflow-hidden border border-border"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-16 h-16 text-primary/30 mx-auto mb-4" />
-                  <p className="text-foreground/60">Interactive map coming soon</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
       </main>
 
       <Footer />

@@ -28,11 +28,10 @@ export default function PricingCard({
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
       whileHover={{ y: isPopular ? -12 : -8 }}
-      className={`relative rounded-2xl transition-all duration-300 overflow-hidden ${
-        isPopular
-          ? 'border-2 border-primary bg-gradient-to-br from-primary/5 to-accent/5 shadow-xl'
-          : 'border border-border bg-card hover:border-primary/50'
-      }`}
+      className={`relative rounded-2xl transition-all duration-300 overflow-hidden ${isPopular
+        ? 'border-2 border-primary bg-gradient-to-br from-primary/5 to-accent/5 shadow-xl'
+        : 'border border-border bg-card hover:border-primary/50'
+        }`}
     >
       {/* Popular Badge */}
       {isPopular && (
@@ -54,7 +53,7 @@ export default function PricingCard({
         {/* Price */}
         <motion.div className="mb-6">
           <div className="flex items-baseline gap-1">
-            <span className="text-4xl font-bold text-primary">${price}</span>
+            <span className="text-2xl font-bold text-primary">{price}</span>
             <span className="text-foreground/60 text-sm">/month</span>
           </div>
         </motion.div>
@@ -67,11 +66,10 @@ export default function PricingCard({
         >
           <Link
             href="/contact"
-            className={`block w-full py-3 rounded-lg font-semibold transition-colors text-center text-sm ${
-              isPopular
-                ? 'bg-primary text-primary-foreground hover:bg-primary/90'
-                : 'bg-secondary text-secondary-foreground hover:bg-secondary/90 border border-border'
-            }`}
+            className={`block w-full py-3 rounded-lg font-semibold transition-colors text-center text-sm ${isPopular
+              ? 'bg-primary text-primary-foreground hover:bg-primary/90'
+              : 'bg-secondary text-secondary-foreground hover:bg-secondary/90 border border-border'
+              }`}
           >
             Get Started
           </Link>

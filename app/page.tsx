@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import ServiceCard from '@/components/ServiceCard';
 import AnimatedSection from '@/components/AnimatedSection';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Share2,
   MessageSquare,
@@ -124,12 +125,12 @@ export default function Home() {
                   </Link>
                 </motion.div>
 
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                {/* <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <button className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-8 py-4 rounded-lg font-semibold hover:bg-secondary/80 transition-colors border border-border">
                     <Play className="w-5 h-5" />
                     Watch Demo
                   </button>
-                </motion.div>
+                </motion.div> */}
               </motion.div>
 
               {/* Scroll Indicator */}
@@ -163,26 +164,20 @@ export default function Home() {
               transition={{ duration: 0.7, delay: 0.3 }}
             >
               <motion.div
-                className="relative w-full max-w-md h-96 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl border border-primary/20 flex items-center justify-center overflow-hidden"
-                whileHover={{ boxShadow: '0 30px 60px rgba(0, 0, 0, 0.15)' }}
+                className="relative w-full max-w-md h-96 rounded-2xl overflow-hidden"
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.3 }}
               >
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-accent/10"
-                  animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
-                  transition={{ duration: 4, repeat: Infinity, repeatType: 'mirror' }}
+                <Image
+                  src="/growth.jpg"   // keep inside public folder
+                  alt="Business Growth"
+                  fill
+                  className="object-cover rounded-2xl"
+                  priority
                 />
-                <motion.div
-                  className="text-center relative z-10"
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                >
-                  <TrendingUp className="w-24 h-24 text-primary/30 mx-auto mb-4" />
-                  <p className="text-foreground/60 font-semibold">
-                    Your Business Growth Starts Here
-                  </p>
-                </motion.div>
               </motion.div>
             </motion.div>
+
           </div>
         </section>
 
@@ -215,7 +210,7 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8">
+        <section className="py-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <AnimatedSection className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">
@@ -272,7 +267,7 @@ export default function Home() {
                   href="/contact"
                   className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
                 >
-                  Start Your Free Consultation
+                  Start Your 5-day Free Trial
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </motion.div>

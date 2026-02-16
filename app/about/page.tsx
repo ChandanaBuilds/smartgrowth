@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import AnimatedSection from '@/components/AnimatedSection';
 import { Users, Target, Lightbulb, Award, TrendingUp, Heart } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function AboutPage() {
   const values = [
@@ -48,11 +49,17 @@ export default function AboutPage() {
     { number: '98%', label: 'Client Retention', icon: '⭐' },
   ];
 
+  const clients = [
+    { image: '/remoto.jpeg', name: 'Client One' },
+    { image: '/alphabetz.jpeg', name: 'Client Two' },
+    { image: '/eurokids.jpeg', name: 'Client Three' },
+
+  ];
+
   const team = [
-    { role: 'Strategy Director', name: 'charan' },
-    { role: 'Creative Lead', name: 'Ghouse' },
-    { role: 'Social Media Manager', name: 'Ghouse' },
-    { role: 'SEO Specialist', name: 'Ghouse' },
+    { role: 'Co-Founder & Creative Director', name: 'Sani Azeem' },
+    { role: 'Co-Founder & Growth Marketing Lead', name: 'Shaik Ghouse baba ' },
+    { role: 'Website Developer', name: 'Chandana Tantanapally' },
   ];
 
   return (
@@ -60,8 +67,9 @@ export default function AboutPage() {
       <Navbar />
 
       <main className="overflow-hidden">
+
         {/* Hero Section */}
-        <section className="min-h-[60vh] pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background to-secondary/10">
+        <section className="min-h-[40vh] pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background to-secondary/10">
           <div className="max-w-6xl mx-auto">
             <AnimatedSection className="text-center">
               <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 text-balance">
@@ -75,9 +83,10 @@ export default function AboutPage() {
         </section>
 
         {/* Story Section */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8">
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
               <AnimatedSection direction="left">
                 <h2 className="text-4xl font-bold text-foreground mb-6">Our Story</h2>
                 <p className="text-lg text-foreground/70 mb-4 leading-relaxed">
@@ -92,29 +101,27 @@ export default function AboutPage() {
               </AnimatedSection>
 
               <AnimatedSection direction="right">
-                <div className="relative h-96 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl border border-primary/20 flex items-center justify-center overflow-hidden">
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-accent/10"
-                    animate={{
-                      backgroundPosition: ['0% 0%', '100% 100%'],
-                    }}
-                    transition={{ duration: 4, repeat: Infinity, repeatType: 'mirror' }}
+                <motion.div
+                  className="relative h-96 rounded-2xl overflow-hidden shadow-xl"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Image
+                    src="/story.png"
+                    alt="Our Story"
+                    fill
+                    className="object-cover"
+                    priority
                   />
-                  <motion.div
-                    className="text-7xl relative z-10"
-                    animate={{ y: [0, -15, 0] }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                  >
-                    🚀
-                  </motion.div>
-                </div>
+                </motion.div>
               </AnimatedSection>
+
             </div>
           </div>
         </section>
 
         {/* Values Section */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-card border-y border-border">
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-card border-y border-border">
           <div className="max-w-6xl mx-auto">
             <AnimatedSection className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Our Core Values</h2>
@@ -123,23 +130,13 @@ export default function AboutPage() {
               </p>
             </AnimatedSection>
 
-            <motion.div
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
-            >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {values.map((value, idx) => {
                 const Icon = value.icon;
                 return (
                   <motion.div
                     key={idx}
                     className="bg-background rounded-xl p-8 border border-border hover:border-primary/50 transition-colors group"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1 }}
                     whileHover={{ y: -4 }}
                   >
                     <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
@@ -150,12 +147,12 @@ export default function AboutPage() {
                   </motion.div>
                 );
               })}
-            </motion.div>
+            </div>
           </div>
         </section>
 
         {/* Achievements Section */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8">
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <AnimatedSection className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">By The Numbers</h2>
@@ -164,47 +161,54 @@ export default function AboutPage() {
               </p>
             </AnimatedSection>
 
-            <motion.div
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
-            >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {achievements.map((item, idx) => (
                 <motion.div
                   key={idx}
                   className="text-center p-8 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
                 >
-                  <motion.div
-                    className="text-5xl mb-3"
-                    animate={{ y: [0, -8, 0] }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                  >
-                    {item.icon}
-                  </motion.div>
-                  <motion.h3
-                    className="text-3xl font-bold text-primary mb-2"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1 + 0.2 }}
-                  >
-                    {item.number}
-                  </motion.h3>
+                  <div className="text-5xl mb-3">{item.icon}</div>
+                  <h3 className="text-3xl font-bold text-primary mb-2">{item.number}</h3>
                   <p className="text-foreground/70 font-medium">{item.label}</p>
                 </motion.div>
               ))}
-            </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Clients Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <AnimatedSection className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+                Our Clients
+              </h2>
+              <p className="text-lg text-foreground/70">
+                Businesses that trust Smart Growth
+              </p>
+            </AnimatedSection>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {clients.map((client, idx) => (
+                <motion.div
+                  key={idx}
+                  className="relative h-64 rounded-2xl overflow-hidden shadow-lg group"
+                  whileHover={{ scale: 1.03 }}
+                >
+                  <Image
+                    src={client.image}
+                    alt={client.name}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* Team Section */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-card border-t border-border">
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-card border-t border-border">
           <div className="max-w-6xl mx-auto">
             <AnimatedSection className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Meet Our Team</h2>
@@ -213,61 +217,22 @@ export default function AboutPage() {
               </p>
             </AnimatedSection>
 
-            <motion.div
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
-            >
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8">
               {team.map((member, idx) => (
-                <motion.div
-                  key={idx}
-                  className="text-center"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  whileHover={{ y: -8 }}
-                >
-                  <motion.div
-                    className="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 border-2 border-primary/20 flex items-center justify-center text-5xl"
-                    whileHover={{ scale: 1.05 }}
-                  >
+                <motion.div key={idx} className="text-center" whileHover={{ y: -8 }}>
+                  <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 border-2 border-primary/20 flex items-center justify-center text-5xl">
                     {member.name.charAt(0)}
-                  </motion.div>
+                  </div>
                   <h3 className="text-xl font-bold text-foreground">{member.name}</h3>
                   <p className="text-foreground/70 text-sm">{member.role}</p>
                 </motion.div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <AnimatedSection>
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">
-                Join 150+ Schools Growing With Us
-              </h2>
-              <p className="text-lg text-foreground/70 mb-8 text-balance">
-                Let&apos;s build something amazing together
-              </p>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                >
-                  Schedule a Chat
-                </Link>
-              </motion.div>
-            </AnimatedSection>
-          </div>
-        </section>
+        <Footer />
       </main>
-
-      <Footer />
     </>
   );
 }

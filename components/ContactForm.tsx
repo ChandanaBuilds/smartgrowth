@@ -39,7 +39,7 @@ export default function ContactForm() {
   };
 
   const inputClasses =
-    'w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-foreground/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200';
+    'w-full px-4 py-3 rounded-lg bg-white border border-border text-foreground placeholder:text-foreground/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200';
 
   return (
     <div className="max-w-2xl mx-auto">
@@ -110,7 +110,7 @@ export default function ContactForm() {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              placeholder="+1 (555) 123-4567"
+              placeholder="+91 99xxxxxxxx"
               className={inputClasses}
             />
           </motion.div>

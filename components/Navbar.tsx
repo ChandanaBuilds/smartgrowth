@@ -28,18 +28,18 @@ export default function Navbar() {
   return (
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-        ? 'bg-background/95 backdrop-blur-md border-b border-border shadow-sm'
+        ? 'bg-background/95  shadow-sm'
         : 'bg-transparent'
         }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Logo */}
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
-          <div className="w-16 h-16 relative">
+          <div className="w-16 h-20 relative">
             <img
               src="/logo2.png"
               alt="Smart Growth Logo"
@@ -57,7 +57,7 @@ export default function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-foreground/80 hover:text-primary transition-colors text-sm font-medium"
+              className="text-foreground/80 hover:text-primary transition-colors text-md font-medium"
             >
               {item.label}
             </Link>

@@ -12,55 +12,47 @@ export default function PricingPage() {
   const plans = [
     {
       name: 'Starter',
-      price: '999',
-      description: 'Best for small businesses & startups',
+      price: '₹12,000 – ₹15,000',
+      description: 'Best for Small Businesses',
       features: [
         'Social media management (2 platforms)',
-        'Monthly content calendar',
         '4 posts per week',
+        'Monthly content calendar',
         'Basic performance analytics',
-        'Email support',
         'Monthly reporting',
       ],
       isPopular: false,
     },
     {
       name: 'Professional',
-      price: '1999',
-      description: 'Most popular for growing businesses',
+      price: '₹25,000 – ₹35,000',
+      description: 'Ideal for Growing Brands',
       features: [
-        'All Starter features',
         'Social media management (4 platforms)',
         'WhatsApp marketing campaigns',
         'Email marketing setup',
         'SEO optimization',
-        'Advanced analytics',
         'Video content creation (2 per month)',
-        'Priority support',
         'Weekly reporting',
       ],
       isPopular: true,
     },
     {
       name: 'Enterprise',
-      price: '3999',
-      description: 'For established brands & enterprises',
+      price: '₹55,000 – ₹75,000+',
+      description: 'For Established Brands & Enterprises',
       features: [
         'All Professional features',
-        'Dedicated account manager',
-        'Custom growth strategy',
-        'Unlimited content creation',
         'Paid advertising management',
-        'Creative design services',
-        'Google Business Profile optimization',
+        'Unlimited content creation',
         'Lead generation setup',
         'Real-time analytics dashboard',
         'Daily support',
-        'Custom reporting',
       ],
       isPopular: false,
     },
   ];
+
 
   const faqs = [
     {
@@ -71,7 +63,7 @@ export default function PricingPage() {
     {
       question: 'Do you offer a free trial?',
       answer:
-        'Yes, we offer a 14-day free trial for new clients. No credit card is required and you get access to all features of your selected plan.',
+        'Yes, we offer a 5-day free trial for new clients. No credit card is required and you get access to all features of your selected plan.',
     },
     {
       question: 'Can I get a custom marketing package?',
@@ -101,7 +93,7 @@ export default function PricingPage() {
 
       <main className="overflow-hidden">
         {/* Hero Section */}
-        <section className="min-h-[60vh] pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background to-secondary/10">
+        <section className="min-h-[40vh] pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background to-secondary/10">
           <div className="max-w-6xl mx-auto">
             <AnimatedSection className="text-center">
               <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 text-balance">
@@ -256,7 +248,7 @@ export default function PricingPage() {
                 Ready to Grow Your Business?
               </h2>
               <p className="text-lg text-foreground/70 mb-8 text-balance">
-                Start your free 14-day trial today. No credit card required.
+                Start your free 5-day trial today. No credit card required.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

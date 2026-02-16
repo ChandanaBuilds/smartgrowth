@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Footer() {
@@ -28,9 +28,8 @@ export default function Footer() {
   };
 
   const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
+    { icon: Youtube, href: 'https://youtube.com/@smartgrowth-x1s?si=X3zD2PO9vVox2UTK', label: 'YouTube' },
+    { icon: Instagram, href: 'https://www.instagram.com/smartgrowth.digitalmarketing?igsh=MXBoc3M4a2UxbDQwbQ==', label: 'Instagram' },
   ];
 
   return (
@@ -97,7 +96,7 @@ export default function Footer() {
               <p className="text-xs uppercase tracking-wide text-foreground/60 font-semibold">
                 Phone
               </p>
-              <p className="text-foreground font-medium">+1 (555) 123-4567</p>
+              <p className="text-foreground font-medium">+91 7981237933</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
@@ -106,7 +105,7 @@ export default function Footer() {
               <p className="text-xs uppercase tracking-wide text-foreground/60 font-semibold">
                 Email
               </p>
-              <p className="text-foreground font-medium">info@smartgrowth.io</p>
+              <p className="text-foreground font-medium">smartgrowth402@gmail.com</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
@@ -115,7 +114,7 @@ export default function Footer() {
               <p className="text-xs uppercase tracking-wide text-foreground/60 font-semibold">
                 Location
               </p>
-              <p className="text-foreground font-medium">123 Marketing St, Tech City, TC 12345</p>
+              <p className="text-foreground font-medium">Lb Nagar</p>
             </div>
           </div>
         </motion.div>
