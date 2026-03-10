@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,29 +28,38 @@ export default function Navbar() {
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-        ? 'bg-background/95  shadow-sm'
-        : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-background/95 shadow-sm' : 'bg-white'
         }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        {/* Logo */}
-        {/* Logo */}
+
+        {/* Logo Section */}
         <Link href="/" className="flex items-center gap-3">
-          <div className="w-16 h-20 relative">
-            <img
+
+          {/* Circular Logo */}
+          <div className="relative w-20 h-20">
+            <Image
               src="/logo2.png"
               alt="Smart Growth Logo"
-              className="w-full h-full object-contain"
+              fill
+              className="object-contain"
+            />
+          </div>
+
+          {/* Text Logo */}
+          <div className="relative w-50 h-24">
+            <Image
+              src="/logo3.png"
+              alt="Smart Growth Text Logo"
+              fill
+              className="object-contain"
             />
           </div>
 
         </Link>
-
-
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
@@ -90,6 +100,7 @@ export default function Navbar() {
             <Menu className="w-6 h-6 text-foreground" />
           )}
         </button>
+
       </nav>
 
       {/* Mobile Navigation */}
@@ -103,6 +114,7 @@ export default function Navbar() {
         className="md:hidden bg-background border-b border-border overflow-hidden"
       >
         <div className="px-4 py-4 space-y-3">
+
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -113,6 +125,7 @@ export default function Navbar() {
               {item.label}
             </Link>
           ))}
+
           <Link
             href="/contact"
             className="block bg-primary text-primary-foreground px-4 py-2 rounded-lg font-medium text-center mt-4"
@@ -120,6 +133,7 @@ export default function Navbar() {
           >
             Get Started
           </Link>
+
         </div>
       </motion.div>
     </motion.header>

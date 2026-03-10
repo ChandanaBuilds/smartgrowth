@@ -59,6 +59,20 @@ export default function ServicesPage() {
       image: '/creative.jpeg',
     },
     {
+      title: 'Website Development',
+      description:
+        'Complete website development and optimization services to build fast, modern, and high-performing websites that help your business grow online.',
+      features: [
+        'New website development',
+        'Changes and updates in existing websites',
+        'SEO integration for better search ranking',
+        'Website performance optimization',
+        'Mobile responsive design',
+        'Speed and technical performance monitoring',
+      ],
+      image: '/web.jpg',
+    },
+    {
       title: 'SEO & GMB Optimization',
       description:
         'Ensure your school appears at the top of search results when parents look for schools in your area.',

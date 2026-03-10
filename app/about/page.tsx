@@ -51,8 +51,10 @@ export default function AboutPage() {
 
   const clients = [
     { image: '/remoto.jpeg', name: 'Client One' },
-    { image: '/alphabetz.jpeg', name: 'Client Two' },
+    { image: '/alpha.jpeg', name: 'Client Two' },
     { image: '/eurokids.jpeg', name: 'Client Three' },
+    { image: '/varahi.jpeg', name: 'Client Four' },
+    { image: '/aredu.jpeg', name: 'Client Five' },
 
   ];
 
@@ -177,7 +179,7 @@ export default function AboutPage() {
         </section>
 
         {/* Clients Section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-6xl mx-auto">
             <AnimatedSection className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -199,7 +201,7 @@ export default function AboutPage() {
                     src={client.image}
                     alt={client.name}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="object-contain group-hover:scale-110 transition-transform duration-500"
                   />
                 </motion.div>
               ))}

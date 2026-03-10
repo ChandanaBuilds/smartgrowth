@@ -16,6 +16,7 @@ import {
   TrendingUp,
   ArrowRight,
   Play,
+  CodeIcon,
 } from 'lucide-react';
 
 export default function Home() {
@@ -43,6 +44,12 @@ export default function Home() {
       title: 'Creative Design',
       description:
         'High-impact designs including social media creatives, ads, banners, and complete brand visuals.',
+    },
+    {
+      icon: CodeIcon,
+      title: 'Web Development',
+      description:
+        'Complete website development and optimization services to build fast, modern, and high-performing websites that help your business grow online.',
     },
     {
       icon: Search,
@@ -82,7 +89,7 @@ export default function Home() {
 
       <main className="overflow-hidden">
         {/* Hero Section */}
-        <section className="min-h-screen pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative bg-gradient-to-br from-background via-background to-secondary/10">
+        <section className="min-h-screen pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative bg-gradient-to-br from-white to-indigo-100">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <motion.div
@@ -182,7 +189,7 @@ export default function Home() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card border-y border-border">
+        <section className="py-15 px-4 sm:px-6 lg:px-8 bg-card  bg-yellow-20">
           <div className="max-w-6xl mx-auto">
             <motion.div
               className="grid grid-cols-2 md:grid-cols-4 gap-8"
@@ -210,7 +217,7 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-        <section className="py-10 px-4 sm:px-6 lg:px-8">
+        <section className="py-10 px-4 sm:px-6 lg:px-8 bg-indigo-50">
           <div className="max-w-6xl mx-auto">
             <AnimatedSection className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">
@@ -252,7 +259,7 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary/10 to-accent/10 border-t border-border">
+        <section className="py-10 px-4 sm:px-6 lg:px-8 bg-white ">
           <div className="max-w-4xl mx-auto text-center">
             <AnimatedSection>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">
