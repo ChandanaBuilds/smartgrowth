@@ -44,6 +44,7 @@ export default function ContactPage() {
     { icon: Instagram, href: 'https://www.instagram.com/smartgrowth.digitalmarketing?igsh=MXBoc3M4a2UxbDQwbQ==', label: 'Instagram' },
   ];
 
+
   return (
     <>
       <Navbar />
