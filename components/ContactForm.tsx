@@ -21,21 +21,51 @@ export default function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  interface FormData {
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+  }
+
+  interface ApiResponse {
+    success: boolean;
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    setSubmitted(true);
+      const data: ApiResponse = await res.json();
+
+      console.log("API RESPONSE:", data);
+
+      if (data.success) {
+        setSubmitted(true);
+
+        setTimeout(() => {
+          setFormData({ name: '', email: '', phone: '', message: '' });
+          setSubmitted(false);
+        }, 3000);
+      } else {
+        alert("Failed to send email ❌");
+      }
+
+    } catch (error) {
+      console.error("ERROR:", error);
+      alert("Something went wrong ❌");
+    }
+
     setLoading(false);
-
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setFormData({ name: '', email: '', phone: '', message: '' });
-      setSubmitted(false);
-    }, 3000);
   };
 
   const inputClasses =
