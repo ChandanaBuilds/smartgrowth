@@ -51,6 +51,29 @@ export default function PricingPage() {
       ],
       isPopular: false,
     },
+    {
+      name: 'School Growth Package',
+      price: '₹45,000',
+      description: 'Special digital marketing package for schools (Valid till June)',
+      features: [
+        'Valid till June',
+        '15 Reels Creation',
+        '8 Social Media Posts',
+        '4 Meta Ads Campaigns',
+        '4 Google Ads Campaigns',
+        '4 Shoots for 3 Months',
+        'On-site Shoots (4 Days)',
+        'School Exploration & Activity Coverage',
+        'Google My Business Management',
+        'YouTube Channel Handling',
+        'Instagram Management',
+        'Facebook Management',
+        'Twitter (X) Handling',
+        'LinkedIn Management',
+        'Creative Advertisement Strategy & Execution',
+      ],
+      isPopular: true,
+    }
   ];
 
 
