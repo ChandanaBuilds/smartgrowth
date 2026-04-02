@@ -22,6 +22,8 @@ export default function PricingPage() {
         'Monthly reporting',
       ],
       isPopular: false,
+      duration: 'month',
+
     },
     {
       name: 'Professional',
@@ -36,6 +38,8 @@ export default function PricingPage() {
         'Weekly reporting',
       ],
       isPopular: true,
+      duration: 'month',
+
     },
     {
       name: 'Enterprise',
@@ -50,6 +54,8 @@ export default function PricingPage() {
         'Daily support',
       ],
       isPopular: false,
+      duration: 'month',
+
     },
     {
       name: 'School Growth Package',
@@ -73,6 +79,8 @@ export default function PricingPage() {
         'Creative Advertisement Strategy & Execution',
       ],
       isPopular: true,
+      duration: '3 month',
+
     }
   ];
 
@@ -148,6 +156,8 @@ export default function PricingPage() {
                   features={plan.features}
                   isPopular={plan.isPopular}
                   delay={idx * 0.1}
+                  duration={plan.duration} // 👈 ADD THIS
+
                 />
               ))}
             </motion.div>

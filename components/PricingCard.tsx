@@ -11,6 +11,7 @@ interface PricingCardProps {
   features: string[];
   isPopular?: boolean;
   delay?: number;
+  duration?: string;
 }
 
 export default function PricingCard({
@@ -20,6 +21,7 @@ export default function PricingCard({
   features,
   isPopular = false,
   delay = 0,
+  duration = 'month',
 }: PricingCardProps) {
   return (
     <motion.div
@@ -54,7 +56,7 @@ export default function PricingCard({
         <motion.div className="mb-6">
           <div className="flex items-baseline gap-1">
             <span className="text-2xl font-bold text-primary">{price}</span>
-            <span className="text-foreground/60 text-sm">/month</span>
+            <span className="text-foreground/60 text-sm">/{duration}</span>
           </div>
         </motion.div>
 
