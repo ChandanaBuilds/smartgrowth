@@ -55,6 +55,12 @@ export default function AboutPage() {
     { image: '/eurokids.jpeg', name: 'Client Three' },
     { image: '/varahi.jpeg', name: 'Client Four' },
     { image: '/aredu.jpeg', name: 'Client Five' },
+    { image: '/laptop.jpeg', name: 'Client Six' },
+    { image: '/grk.jpeg', name: 'Client Seven' },
+    { image: '/sr.jpeg', name: 'Client Eight' }
+
+
+
 
   ];
 
