@@ -91,6 +91,7 @@ export default function AboutPage() {
     { image: '/clients/sr.jpeg', name: 'SR' },
     { image: '/clients/vjr.jpeg', name: 'VJR' },
     { image: '/clients/jaa.jpeg', name: 'JAASR GROUP' },
+    { image: '/clients/makeup.jpeg', name: 'Afshanmakeovers' }
   ];
 
   const team = [

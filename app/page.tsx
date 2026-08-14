@@ -70,6 +70,12 @@ export default function Home() {
       description:
         'Custom digital growth strategies focused on lead generation, conversions, and long-term success.',
     },
+    {
+      title: 'App Development',
+      description:
+        'Modern and scalable mobile applications designed to help businesses connect with customers, streamline operations, and grow digitally.',
+      image: '/service/app.jpg',
+    },
   ];
 
   const scrollServices = (direction: 'left' | 'right') => {
@@ -727,7 +733,7 @@ export default function Home() {
 
               {/* GRK Prime Realty */}
               <motion.a
-                href="https://vercel.com/chandanas-projects-1f2eb8e7/grkprimerealty"
+                href="https://grk-primerealty.co.in/"
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{

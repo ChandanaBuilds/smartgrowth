@@ -46,6 +46,12 @@ export default function ServicesPage() {
         'Build a clear roadmap for sustainable digital growth with a strategy designed around your business, market, audience, and goals. We combine market insights, competitor research, digital channels, and performance tracking to create a focused approach that supports long-term growth.',
       image: '/service/growth.webp',
     },
+    {
+      title: 'App Development',
+      description:
+        'Modern and scalable mobile applications designed to help businesses connect with customers, streamline operations, and grow digitally.',
+      image: '/service/app.jpg',
+    },
   ];
 
   return (

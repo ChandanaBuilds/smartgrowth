@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
+import FloatingContact from '@/components/FloatingContact';
 
 export const metadata: Metadata = {
   title: 'Digital Marketing Agency in Hyderabad | Smart Growth',
@@ -26,6 +27,8 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {children}
+        <FloatingContact />
+
         <Analytics />
       </body>
     </html>
