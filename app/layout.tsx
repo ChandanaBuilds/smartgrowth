@@ -7,7 +7,14 @@ export const metadata: Metadata = {
   description:
     'Smart Growth is a digital marketing agency in Hyderabad offering SEO, social media marketing, WhatsApp marketing, email marketing, web development and creative design.',
   metadataBase: new URL('https://www.smart-growth.co.in'),
+
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
 }
+
 
 
 export default function RootLayout({
