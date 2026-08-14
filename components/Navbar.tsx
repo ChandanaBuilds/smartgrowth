@@ -67,7 +67,7 @@ export default function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-foreground/80 hover:text-primary transition-colors text-md font-medium"
+              className="text-foreground/80 hover:text-primary transition-colors text-xl font-light"
             >
               {item.label}
             </Link>

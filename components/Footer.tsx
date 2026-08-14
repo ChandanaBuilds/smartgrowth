@@ -9,7 +9,7 @@ import {
   Facebook,
   Linkedin,
   Instagram,
-  Youtube
+  Youtube,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -23,12 +23,14 @@ export default function Footer() {
       { label: 'SEO & SMO', href: '#' },
       { label: 'Creative Design', href: '#' },
     ],
+
     Company: [
       { label: 'About Us', href: '/about' },
       { label: 'Services', href: '/services' },
       { label: 'Pricing', href: '/pricing' },
       { label: 'Contact', href: '/contact' },
     ],
+
     Legal: [
       { label: 'Privacy Policy', href: '#' },
       { label: 'Terms of Service', href: '#' },
@@ -40,83 +42,82 @@ export default function Footer() {
     {
       icon: Youtube,
       href: 'https://youtube.com/@smartgrowth-x1s?si=va7pW8OjuCSU4hvD',
-      label: 'YouTube'
+      label: 'YouTube',
     },
     {
       icon: Instagram,
       href: 'https://www.instagram.com/smartgrowth.digitalmarketing?igsh=MXBoc3M4a2UxbDQwbQ%3D%3D',
-      label: 'Instagram'
+      label: 'Instagram',
     },
     {
       icon: Facebook,
       href: 'https://www.facebook.com/share/1DeZBPuFJH/',
-      label: 'Facebook'
+      label: 'Facebook',
     },
     {
       icon: Linkedin,
       href: 'https://www.linkedin.com/in/smart-growth-288146277',
-      label: 'LinkedIn'
+      label: 'LinkedIn',
     },
     {
-      icon: Instagram, // temporary icon for Threads (lucide doesn't have threads)
+      icon: Instagram,
       href: 'https://www.threads.com/@smartgrowth.digitalmarketing',
-      label: 'Threads'
+      label: 'Threads',
     },
   ];
 
   return (
-    <footer className="bg-indigo mt-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="border-t border-gray-200 bg-[#F7F8F6]">
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
 
-        {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        {/* ================= TOP ================= */}
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-4 lg:gap-12">
 
           {/* Brand */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="flex items-center gap-3 mb-4">
-
-              {/* Logo Image */}
+            <Link href="/" className="inline-block">
               <Image
                 src="/logo.jpeg"
                 alt="Smart Growth Logo"
-                width={200}
-                height={50}
-                className=""
+                width={170}
+                height={45}
+                className="h-auto w-[150px] object-contain sm:w-[170px]"
               />
+            </Link>
 
-
-
-            </div>
-
-            <p className="text-foreground/70 text-sm">
-              Transforming Business through expert digital marketing solutions.
+            <p className="mt-3 max-w-[260px] text-sm leading-relaxed text-foreground/60">
+              Transforming businesses through expert digital marketing
+              solutions.
             </p>
           </motion.div>
 
-          {/* Links */}
-          {Object.entries(footerLinks).map(([title, links]) => (
+          {/* Footer Links */}
+          {Object.entries(footerLinks).map(([title, links], index) => (
             <motion.div
               key={title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+              }}
             >
-              <h3 className="font-semibold text-foreground mb-4 text-sm uppercase tracking-wide">
+              <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-foreground">
                 {title}
               </h3>
 
-              <ul className="space-y-2">
+              <ul className="space-y-1.5">
                 {links.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-foreground/70 hover:text-primary transition-colors text-sm"
+                      className="text-sm text-foreground/60 transition-colors hover:text-primary"
                     >
                       {link.label}
                     </Link>
@@ -128,68 +129,102 @@ export default function Footer() {
 
         </div>
 
-        {/* Contact Info */}
+        {/* ================= CONTACT ================= */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 py-8 border-t border-border"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
+          className="mt-7 grid grid-cols-1 gap-4 border-t border-gray-200 py-6 sm:grid-cols-2 lg:grid-cols-3"
         >
 
-          <div className="flex items-start gap-3">
-            <Phone className="w-5 h-5 text-primary mt-0.5" />
+          {/* Phone */}
+          <div className="flex items-center gap-3">
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white">
+              <Phone className="h-4 w-4 text-primary" />
+            </div>
+
             <div>
-              <p className="text-xs uppercase tracking-wide text-foreground/60 font-semibold">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-foreground/40">
                 Phone
               </p>
-              <p className="text-foreground font-medium">+91 7981237933</p>
+
+              <p className="text-sm font-medium text-foreground">
+                +91 7981237933
+              </p>
             </div>
           </div>
 
-          <div className="flex items-start gap-3">
-            <Mail className="w-5 h-5 text-primary mt-0.5" />
+          {/* Email */}
+          <div className="flex items-center gap-3">
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white">
+              <Mail className="h-4 w-4 text-primary" />
+            </div>
+
             <div>
-              <p className="text-xs uppercase tracking-wide text-foreground/60 font-semibold">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-foreground/40">
                 Email
               </p>
-              <p className="text-foreground font-medium">
+
+              <p className="break-all text-sm font-medium text-foreground">
                 smartgrowth402@gmail.com
               </p>
             </div>
           </div>
 
-          <div className="flex items-start gap-3">
-            <MapPin className="w-5 h-5 text-primary mt-0.5" />
+          {/* Location */}
+          <div className="flex items-center gap-3">
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white">
+              <MapPin className="h-4 w-4 text-primary" />
+            </div>
+
             <div>
-              <p className="text-xs uppercase tracking-wide text-foreground/60 font-semibold">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-foreground/40">
                 Location
               </p>
-              <p className="text-foreground font-medium">Lb Nagar</p>
+
+              <p className="text-sm font-medium text-foreground">
+                LB Nagar
+              </p>
             </div>
           </div>
 
         </motion.div>
 
-        {/* Bottom */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-8 border-t border-border">
+        {/* ================= BOTTOM ================= */}
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-gray-200 pt-5 sm:flex-row">
 
-          <p className="text-foreground/60 text-sm">
+          <p className="text-xs text-foreground/50">
             © {currentYear} Smart Growth. All rights reserved.
           </p>
 
           {/* Social Icons */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
 
             {socialLinks.map(({ icon: Icon, href, label }) => (
-              <Link
+              <a
                 key={label}
                 href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={label}
-                className="text-foreground/60 hover:text-primary transition-colors"
+                className="
+                  flex
+                  h-8
+                  w-8
+                  items-center
+                  justify-center
+                  rounded-full
+                  bg-white
+                  text-foreground/50
+                  transition-all
+                  duration-300
+                  hover:bg-primary
+                  hover:text-white
+                "
               >
-                <Icon className="w-5 h-5" />
-              </Link>
+                <Icon className="h-4 w-4" />
+              </a>
             ))}
 
           </div>
